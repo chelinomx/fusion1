@@ -10,6 +10,31 @@
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
     <style>
+
+      footer {
+    text-align: center; /* Center the text horizontally */
+    padding: 20px; /* Add padding for spacing */
+    background-color: #333; /* Background color for the footer */
+    color: white; /* Text color for the footer */
+}
+
+/* If you want to center the footer vertically in the viewport, you can use flexbox */
+html, body {
+    height: 100%; /* Make sure the body and HTML have full height */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1; /* Allow the content to expand and fill the remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    align-self: center; /* Center the footer vertically within the content */
+}
     /* You can add additional font formats here for browser compatibility */
 }
         /* Set the background color of the entire page */
@@ -215,12 +240,12 @@
             <a href="games/Mario/"><img src="images/mario.png" alt="Mario"></a>
             <a href="games/Temple-run/"><img src="images/temple-run.jpeg" alt="Temple run"></a>
             <a href="games/osu/"><img src="images/osu.jpg" alt="osu!"></a>
-            <a href="games/geosash/"><img src="images/geo.png" alt="geometry dash">
-            <a href="games/cookie-clicker/"><img src="images/cookie-clicker.jpg" alt="cookie clicker">
+            <a href="games/geosash/"><img src="images/geo.png" alt="geometry dash"></a>
+            <a href="games/cookie-clicker/"><img src="images/cookie-clicker.jpg" alt="cookie clicker"></a>
         </div>
                 
         <footer>
-        <p>&copy; 2023 Your Name</p>
+        <p>&copy; 2023 Fusion.LCC.All Rights Reserved.</p>
         </footer>
     </div>
 
