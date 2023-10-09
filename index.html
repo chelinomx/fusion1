@@ -10,31 +10,12 @@
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
     <style>
-       
-      footer {
-    text-align: center; /* Center the text horizontally */
-    padding: 20px; /* Add padding for spacing */
-    background-color: #333; /* Background color for the footer */
-    color: white; /* Text color for the footer */
-}
-
-/* If you want to center the footer vertically in the viewport, you can use flexbox */
-html, body {
-    height: 100%; /* Make sure the body and HTML have full height */
-    margin: 0; /* Remove default margin */
-    display: flex;
-    flex-direction: column;
-    font-size: 36px;
-}
-
-.content {
-    flex: 1; /* Allow the content to expand and fill the remaining space */
-    display: flex;
-    flex-direction: column;
-}
-
-footer {
-    align-self: center; /* Center the footer vertically within the content */
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         /* Set the background color of the entire page */
         body {
@@ -49,61 +30,138 @@ footer {
             scroll-behavior: smooth;
         }
 
-        /* Your other CSS styles here */
+        /* Navigation styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .game-title {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #8b51fe;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Main content styles */
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+            color: #fff;
+        }
+
+        hr {
+            border: 1px solid #fff;
+            margin: 20px 0;
+        }
+
+        .fusion-text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 120px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .fusion-text {
+            font-size: 190px;
+            background: linear-gradient(to right, #8b51fe 52.5%, #ffffff 50%);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        #randomSubtitle {
+            font-size: 50px;
+            text-align: center;
+            color: white;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            cursor: pointer;
+        }
+
+        /* Centered button */
+        .center-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #getStartedButton {
+            font-size: 34px;
+            padding: 20px 40px;
+            background-color: #8b51fe;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        #getStartedButton:hover {
+            background-color: white;
+            color: #8b51fe;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
     </style>
 
     <script>
-        // Array of possible subtitles
-        const subtitles = ["v3.0 Coming soon..", "CLICK FOR SNEAK PEAK"];
-
-        // Function to pick a random subtitle
-        function getRandomSubtitle() {
-            const randomIndex = Math.floor(Math.random() * subtitles.length);
-            return subtitles[randomIndex];
+        // JavaScript code for navigation
+        function navigateToAnotherPage() {
+            // Check if the subtitle is "CLICK FOR SNEAK PEEK"
+            const randomSubtitleElement = document.getElementById("randomSubtitle");
+            if (randomSubtitleElement.textContent === "CLICK FOR SNEAK PEEK") {
+                // Redirect to another page when clicked
+                window.location.href = "your_target_page.html"; // Replace with the actual URL
+            }
         }
-
-        // Set the random subtitle
-        window.addEventListener('DOMContentLoaded', (event) => {
-            const randomSubtitleElement = document.getElementById("randomSubtitle");
-            randomSubtitleElement.textContent = getRandomSubtitle();
-        });
-
-        // Add scroll functionality to "Get Started" button
-        window.addEventListener('load', function() {
-            var getStartedButton = document.getElementById("getStartedButton");
-            getStartedButton.addEventListener("click", function() {
-                window.scrollBy(0, 470);
-            });
-
-            // Function to show the notification when the page loads
-            window.addEventListener('load', function() {
-                // Customize the message and styling as needed
-                alert('Welcome to our website!'); // Basic alert
-            });
-        });
-
-        // Add an event listener to the random subtitle
-        window.addEventListener('load', function() {
-            // Get the random subtitle element by its id
-            const randomSubtitleElement = document.getElementById("randomSubtitle");
-
-            // Define the URL you want to redirect to for the specific subtitle
-            const sneakPeakURL = "https://example.com/sneak-peak";
-
-            // Add a click event listener to the random subtitle
-            randomSubtitleElement.addEventListener("click", function() {
-                // Check if the text content of the subtitle matches the specific subtitle
-                if (randomSubtitleElement.textContent === "CLICK FOR SNEAK PEAK") {
-                    // Redirect the user to the specified URL for sneak peak
-                    window.location.href = sneakPeakURL;
-                }
-            });
-        });
     </script>
 </head>
 <body>
     <nav>
-      <div class="title-and-search">
+        <div class="title-and-search">
             <h1 class="game-title">FUSION</h1>
             <div class="search">
                 <input type="text" placeholder="Search..." oninput="">
@@ -121,48 +179,33 @@ footer {
         </div>
 
         <!-- Move the randomized subtitles below the "Fusion is awesome!" text -->
-        <h2 id="randomSubtitle"></h2>
+        <h2 id="randomSubtitle" onclick="navigateToAnotherPage()">CLICK FOR SNEAK PEEK</h2>
 
         <!-- Center and style the "Get Started" button -->
         <div class="center-button">
             <button id="getStartedButton">PLAY!</button>
         </div>
 
+        <!-- Game links -->
         <div id="games">
-            <a href="games/bob-the-robber-2/"><img src="images/bob-the-robber-2.png" alt="bob the robber 2"></a>
-            <a href="games/vex3/"><img src="images/vex3.jpg" alt="vex 3"></a>
-            <a href="games/vex4/"><img src="images/vex4.jpg" alt="vex 4"></a>
-            <a href="games/vex5/"><img src="images/vex5.jpg" alt="vex 5"></a>
-            <a href="games/vex6/"><img src="images/vex6.jpeg" alt="vex 6"></a>
-            <a href="games/vex7/"><img src="images/vex7.jpeg" alt="vex 7"></a>
-             <a href="games/Minecraft/"><img src="images/mc.png" alt="Minecraft"></a>
-            <a href="games/moto-x3m/"><img src="images/moto-x3m.jpg" alt="moto x3m"></a>
-            <a href="games/retro-bowl/"><img src="images/retro-bowl.jpg" alt="retrobowl"></a>
-            <a href="games/drive-mad/"><img src="images/drive-mad.jpg" alt="drive mad"></a>
-            <a href="games/slope/"><img src="images/slope.jpg" alt="slope"></a>
-            <a href="games/motox3m2/"><img src="images/motox3m2.jpg" alt="moto x3m2"></a>
-            <a href="games/Basketball-Stars/"><img src="images/basketball-stars.png" alt="basketball stars"></a>
-            <a href="games/2048/"><img src="images/2048.png" alt="2048"></a>
-            <a href="games/1v1lol/"><img src="images/1v1 lol.png" alt="1v1.lol"></a>
-            <a href="games/Monkey-Mart/"><img src="images/monkey mart.png" alt="Monkey Mart"></a>
-            <a href="games/Bitlife/"><img src="images/Bitlife.png" alt="Bitlife"></a>
-            <a href="games/Angry-Sharks/"><img src="images/Angry Sharks.png" alt="Angry Sharks"></a>
-            <a href="games/Sm64/"><img src="images/sm64.jpg" alt="Super Mario 64"></a>
-            <a href="games/Jetpack-joyride/"><img src="images/Jetpack-joyride.png" alt="Jetpack Joyride"></a>
-            <a href="games/Just-fall/"><img src="images/just fall.png" alt="Just fall"></a>
-            <a href="games/Tunnel-rush/"><img src="images/tunnerl-rush.jpg" alt="Tunnel rush"></a>
-            <a href="games/Mario/"><img src="images/mario.png" alt="Mario"></a>
-            <a href="games/Temple-run/"><img src="images/temple-run.jpeg" alt="Temple run"></a>
-            <a href="games/osu/"><img src="images/osu.jpg" alt="osu!"></a>
-            <a href="games/geosash/"><img src="images/geo.png" alt="geometry dash"></a>
-            <a href="games/cookie-clicker/"><img src="images/cookie-clicker.jpg" alt="cookie clicker"></a>
+            <!-- Game link 1 -->
+            <a href="games/game1.html"><img src="images/game1.jpg" alt="Game 1"></a>
+            
+            <!-- Game link 2 -->
+            <a href="games/game2.html"><img src="images/game2.jpg" alt="Game 2"></a>
+            
+            <!-- Add more game links as needed -->
         </div>
-                
+
+        <!-- Footer -->
         <footer>
             <p>&copy; 2023 Fusion.LCC All Rights Reserved.</p>
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // JavaScript code for other functionalities
+        // ...
+    </script>
 </body>
 </html>
