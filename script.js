@@ -2,14 +2,14 @@ var mobile = window.innerWidth < 850;
 
 fetch('games.json').then(response => response.json()).then(games => {
     games.forEach(game => {
-        document.getElementById('games').innerHTML += '<div class="game"><div class="img" loading="lazy" style="background: url(' + game[2] + ') 0% 0% / cover;" onclick="play(' + "'" + game[0] + "', " + "'" + game[3] + "'" + ')"><div class="cover"></div></div><div id="game-content" class="game-content" ><h1>' + game[0] + '</h1><p>' + game[1] + '</p><button class="install" onclick="play(' + "'" + game[0] + "', " + "'" + game[3] + "'" + ')">Play</button></div></div>';
+        document.getElementById('games').innerHTML += '<div class="game"><div class="img" loading="lazy" style="background: url(' + game[2] + ') 0% 0% / cover;" onclick="play(' + "'" + game[0] + "', " + "'" + game[3] + "'" + ')"><div class="cover"></div></div><div id="game-content" class="game-content" ><h1>' + game[0] + '</h1><p>' + game[1] + '</p><button class="install" onclick="play(' + "'" + game[0] + "', " + "'" + game[3] + "'" + ')">Play</button></div></div>'
     });
 });
 
 function play(game, url) {
     localStorage.setItem('game', game);
     if (document.getElementById('game-frame').style.display === 'block') {
-        document.getElementById('game-frame').style display = 'none';
+        document.getElementById('game-frame').style.display = 'none';
         document.getElementById('iframe').src = '';
         document.body.style.overflowY = 'visible';
     } else {
@@ -23,66 +23,70 @@ function gamesPerspective() {
     const gameContent = Array.from(document.getElementsByClassName('game-content'));
     const games = Array.from(document.getElementsByClassName('game'));
     const images = Array.from(document.getElementsByClassName('img'));
-
+    
     if (document.getElementById('games').style.gridTemplateColumns === 'repeat(9, 9.5vw)') {
         gameContent.forEach(game => {
             games.forEach(gameTab => {
                 gameTab.style.backgroundColor = '#222222';
                 gameTab.style.padding = '1.2vw';
                 gameTab.style.display = 'flex';
-            });
+            })
             game.style.display = 'block';
             document.getElementById('games').style.gridTemplateColumns = '.1fr .1fr';
             document.getElementById('games').style.marginLeft = '.6vw';
-        });
-    } else {
+        })
+    } else {    
         gameContent.forEach(game => {
             games.forEach(gameTab => {
                 gameTab.style.backgroundColor = 'transparent';
                 gameTab.style.padding = '0px';
                 gameTab.style.display = 'block';
-            });
+            })
             game.style.display = 'none';
             document.getElementById('games').style.gridTemplateColumns = 'repeat(9, 9.5vw)';
             document.getElementById('games').style.marginLeft = '1vw';
-        });
+        })
         images.forEach(image => {
             image.style.width = '10vw';
             image.style.height = '10vw';
-        });
+        })
     }
 }
 
+// document.getElementById('changePerspective').addEventListener('click', function(e) {
+        // gamesPerspective()
+// });
+
 document.getElementById('start-button').addEventListener('click', function(e) {
-    var scrollDiv = document.getElementById('games').offsetTop - 110;
-    window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+    var scrollDiv = document.getElementById("games").offsetTop - 110;
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
 });
 
-window.addEventListener('scroll', function() {
-    var main = document.getElementById('main');
+window.addEventListener("scroll", function(){
+    var main = document.getElementById("main");
     if (window.scrollY > main.offsetTop + main.offsetHeight - 110) {
-        // something after the first content passed
+        // something after first content passed
     }
-});
+})
 
 function search() {
     var games = document.getElementsByClassName('game');
-    var scrollDiv = document.getElementById('games').offsetTop - 140;
-    var scrollDiv2 = document.getElementById('main').offsetTop;
+    var scrollDiv = document.getElementById("games").offsetTop - 140;
+    var scrollDiv2 = document.getElementById("main").offsetTop;
     var gamesLeft = 0;
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById('search');
     filter = input.value.toUpperCase();
-    ul = document.getElementById('games');
+    ul = document.getElementById("games");
     li = ul.getElementsByClassName('game');
 
     for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName('h1')[0];
+        a = li[i].getElementsByTagName("h1")[0];
         txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = '';
+            li[i].style.display = "";
         } else {
-            li[i].style.display = 'none';
+            li[i].style.display = "none";
         }
     }
 
@@ -95,14 +99,14 @@ function search() {
     if (gamesLeft === games.length) {
         document.getElementById('error').style.display = 'block';
         document.getElementById('footer').style.display = 'none';
-        window.scrollTo({ top: scrollDiv2, behavior: 'instant' });
+        window.scrollTo({ top: scrollDiv2, behavior: 'instant'});
         document.getElementById('games').style.display = 'none';
     } else {
-        window.scrollTo({ top: scrollDiv, behavior: 'instant' });
+        window.scrollTo({ top: scrollDiv, behavior: 'instant'});
         document.getElementById('error').style.display = 'none';
         document.getElementById('games').style.display = 'grid';
     }
-    window.scrollTo({ top: scrollDiv, behavior: 'instant' });
+    window.scrollTo({ top: scrollDiv, behavior: 'instant'});
 }
 
 document.getElementById('search').addEventListener('focus', () => {
@@ -119,21 +123,36 @@ document.getElementById('search').addEventListener('focusout', () => {
     }
 });
 
+// var slideIndex = 0;
+//showSlides();
+
+//function showSlides() {
+    //var i;
+    //var slides = document.getElementsByClassName("item");
+    //for (i = 0; i < slides.length; i++) {
+        //slides[i].style.display = "none"; 
+    //}
+    //slideIndex++;
+    //if (slideIndex > slides.length) {slideIndex = 1} 
+    //slides[slideIndex-1].style.display = "block"; 
+    //setTimeout(showSlides, 5000); // Change image every 5 seconds
+//}
+
 function checkScreenWidth() {
     var mobile = window.innerWidth < 850;
 
     if (mobile) {
-        document.getElementById('navigation').classList.add('mobile');
-        document.getElementById('footer').classList.add('mobile');
+        document.getElementById('navigation').classList.add("mobile");
+        document.getElementById('footer').classList.add("mobile");
         document.getElementById('top').style.display = 'none';
-        document.getElementById('games').classList.add('mobile');
-        document.getElementById('controls').classList.add('mobile');
+        document.getElementById('games').classList.add("mobile");
+        document.getElementById('controls').classList.add("mobile");
     } else {
-        document.getElementById('navigation').classList.remove('mobile');
-        document.getElementById('footer').classList.remove('mobile');
+        document.getElementById('navigation').classList.remove("mobile");
+        document.getElementById('footer').classList.remove("mobile");
         document.getElementById('top').style.display = '';
-        document.getElementById('games').classList.remove('mobile');
-        document.getElementById('controls').classList.remove('mobile');
+        document.getElementById('games').classList.remove("mobile");
+        document.getElementById('controls').classList.remove("mobile");
     }
 }
 
@@ -148,4 +167,4 @@ window.onload = function() {
             navigation.style.backgroundColor = '#2b2b2bf1';
         }
     }
-};
+}
