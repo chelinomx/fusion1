@@ -31,8 +31,16 @@
         <iframe src="#" id="iframe"></iframe>
     </div>
     <div id="error">No Games Found.</div>
-    <div id="games">
-        <!-- Game elements will be dynamically generated here -->
+    <div id="games"></div>
+    <div class="game">
+        <div class="img" loading="lazy" style="background: url(./images/1v1 lol.png) 0% 0% / cover;" onclick="play('1v1.lol', './games/1v1lol')">
+            <div class="cover"></div>
+        </div>
+        <div id="game-content" class="game-content">
+            <h1>Another Game</h1>
+            <p>Description of Another Game.</p>
+            <button class="install" onclick="play('1v1.lol', './games/1v1lol')">Play</button>
+        </div>
     </div>
     <footer id="footer">
         <main>
@@ -43,8 +51,7 @@
             <p id="display"></p>
         </main>
     </footer>
-    <script src="game-links.js"></script> <!-- Reference the game-links.js file -->
     <script src="script.js"></script>
     <script src="subtitle.js"></script>
-</body>
+  </body>
 </html>
