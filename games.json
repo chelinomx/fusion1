@@ -1,20 +1,26 @@
 [
     {
-        "name": "Game 1",
-        "description": "Description of Game 1",
-        "imageURL": "path/to/game1-image.jpg",
+        "name": "Super Adventure Game",
+        "description": "Embark on an epic adventure!",
+        "imageURL": "images/game1.jpg",
         "url": "https://example.com/game1"
     },
     {
-        "name": "Game 2",
-        "description": "Description of Game 2",
-        "imageURL": "path/to/game2-image.jpg",
+        "name": "Puzzle Master",
+        "description": "Challenge your mind with intricate puzzles.",
+        "imageURL": "images/game2.jpg",
         "url": "https://example.com/game2"
     },
     {
-        "name": "Game 3",
-        "description": "Description of Game 3",
-        "imageURL": "path/to/game3-image.jpg",
+        "name": "Space Shooter",
+        "description": "Defend the galaxy from alien invaders.",
+        "imageURL": "images/game3.jpg",
         "url": "https://example.com/game3"
+    },
+    {
+        "name": "Racing Madness",
+        "description": "Race against the best drivers in the world.",
+        "imageURL": "images/game4.jpg",
+        "url": "https://example.com/game4"
     }
 ]
