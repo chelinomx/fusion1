@@ -1,10 +1,12 @@
 var mobile = window.innerWidth < 850;
 
-fetch('games.json').then(response => response.json()).then(games => {
-    games.forEach(game => {
-        document.getElementById('games').innerHTML += '<div class="game"><div class="img" loading="lazy" style="background: url(' + game[2] + ') 0% 0% / cover;" onclick="play(' + "'" + game[0] + "', " + "'" + game[3] + "'" + ')"><div class="cover"></div></div><div id="game-content" class="game-content" ><h1>' + game[0] + '</h1><p>' + game[1] + '</p><button class="install" onclick="play(' + "'" + game[0] + "', " + "'" + game[3] + "'" + ')">Play</button></div></div>'
+fetch('games.json')
+    .then(response => response.json())
+    .then(games => {
+        games.forEach(game => {
+            document.getElementById('games').innerHTML += '<div class="game"><div class="img" loading="lazy" style="background: url(' + game.imageURL + ') 0% 0% / cover;" onclick="play(' + "'" + game.name + "', " + "'" + game.url + "'" + ')"><div class="cover"></div></div><div id="game-content" class="game-content" ><h1>' + game.name + '</h1><p>' + game.description + '</p><button class="install" onclick="play(' + "'" + game.name + "', " + "'" + game.url + "'" + ')">Play</button></div></div>'
+        });
     });
-});
 
 function play(game, url) {
     localStorage.setItem('game', game);
@@ -53,10 +55,6 @@ function gamesPerspective() {
     }
 }
 
-// document.getElementById('changePerspective').addEventListener('click', function(e) {
-        // gamesPerspective()
-// });
-
 document.getElementById('start-button').addEventListener('click', function(e) {
     var scrollDiv = document.getElementById("games").offsetTop - 110;
     window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
@@ -65,7 +63,7 @@ document.getElementById('start-button').addEventListener('click', function(e) {
 window.addEventListener("scroll", function(){
     var main = document.getElementById("main");
     if (window.scrollY > main.offsetTop + main.offsetHeight - 110) {
-        // something after first content passed
+        // something after the first content passed
     }
 })
 
@@ -86,7 +84,7 @@ function search() {
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
         } else {
-            li[i].style.display = "none";
+            li[i].style display = "none";
         }
     }
 
@@ -116,27 +114,12 @@ document.getElementById('search').addEventListener('focus', () => {
 
 document.getElementById('search').addEventListener('focusout', () => {
     document.getElementById('games').style.marginBottom = '1.5vw';
-    if (document.getElementById('error').style.display === 'none') {
+    if the document.getElementById('error').style.display === 'none') {
         if (!mobile) {
             document.getElementById('footer').style.display = 'block';
         }
     }
-});
-
-// var slideIndex = 0;
-//showSlides();
-
-//function showSlides() {
-    //var i;
-    //var slides = document.getElementsByClassName("item");
-    //for (i = 0; i < slides.length; i++) {
-        //slides[i].style.display = "none"; 
-    //}
-    //slideIndex++;
-    //if (slideIndex > slides.length) {slideIndex = 1} 
-    //slides[slideIndex-1].style.display = "block"; 
-    //setTimeout(showSlides, 5000); // Change image every 5 seconds
-//}
+}
 
 function checkScreenWidth() {
     var mobile = window.innerWidth < 850;
