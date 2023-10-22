@@ -2,69 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schoology</title>
-    <link rel="icon" href="images/schoology-logo.png" type="image/png">
-    <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+    <title>FUSION</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2e2e2e;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        #start-button {
+            display: block;
+            margin: 0 auto;
+            font-size: 24px;
+            padding: 10px 20px;
+            background-color: #8b51fe;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #start-button:hover {
+            background-color: white;
+            color: #8b51fe;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        // Your JavaScript code here
+        document.getElementById("start-button").addEventListener("click", function () {
+            window.scrollBy(0, 470);
+        });
+
+        function search() {
+            var searchInput = document.getElementById("search").value;
+            // Add your search logic here
+        }
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const randomSubtitleElement = document.getElementById("subtitle");
+            randomSubtitleElement.textContent = getRandomSubtitle();
+        });
+
+        function getRandomSubtitle() {
+            const subtitles = ["Subtitle 1", "Subtitle 2", "Subtitle 3"];
+            const randomIndex = Math.floor(Math.random() * subtitles.length);
+            return subtitles[randomIndex];
+        }
+
+        function play() {
+            var iframe = document.getElementById("iframe");
+            iframe.src = "game-url.html";
+        }
+    </script>
 </head>
 <body>
-    <nav>
-        <div class="title-and-search">
-            <h1 class="game-title">FUSION</h1>
-            <div class="search">
-                <input type="text" placeholder="Search..." oninput="">
-                <button><i class="fas fa-search"></i></button>
-            </div>
+    <div id="navigation">
+        <h1>FUS<span>ION</span></h1>
+        <img src="images/logo.png" alt="mobile icon" class="mobile-icon">
+        <div class="search">
+            <input type="text" placeholder="Search" id="search" autocomplete="off" oninput='search()'>
+            <button onclick="search()"><i class="fas fa-search"></i></button>
         </div>
-    </nav>
-
-    <div class="content">
-        <hr>
-        <div class="fusion-text-container">
-            <div class="fusion-text">FUSION</div>
-        </div>
-        <h2 id="randomSubtitle"></h2>
-        <div class="center-button">
-            <button id="getStartedButton">PLAY!</button>
-        </div>
-
-        <div id="games">
-            <a href="games/sneakpeek/"><img src="images/Sneak-Peek.jpg" alt="sneekpeek"></a>
-            <a href="games/bob-the-robber-2/"><img src="images/bob-the-robber-2.png" alt="bob the robber 2"></a>
-            <a href="games/vex3/"><img src="images/vex3.jpg" alt="vex 3"></a>
-            <a href="games/vex4/"><img src="images/vex4.jpg" alt="vex 4"></a>
-            <a href="games/vex5/"><img src="images/vex5.jpg" alt="vex 5"></a>
-            <a href="games/vex6/"><img src="images/vex6.jpeg" alt="vex 6"></a>
-            <a href="games/vex7/"><img src="images/vex7.jpeg" alt="vex 7"></a>
-             <a href="games/Minecraft/"><img src="images/mc.png" alt="Minecraft"></a>
-            <a href="games/moto-x3m/"><img src="images/moto-x3m.jpg" alt="moto x3m"></a>
-            <a href="games/retro-bowl/"><img src="images/retro-bowl.jpg" alt="retrobowl"></a>
-            <a href="games/drive-mad/"><img src="images/drive-mad.jpg" alt="drive mad"></a>
-            <a href="games/slope/"><img src="images/slope.jpg" alt="slope"></a>
-            <a href="games/motox3m2/"><img src="images/motox3m2.jpg" alt="moto x3m2"></a>
-            <a href="games/Basketball-Stars/"><img src="images/basketball-stars.png" alt="basketball stars"></a>
-            <a href="games/2048/"><img src="images/2048.png" alt="2048"></a>
-            <a href="games/1v1lol/"><img src="images/1v1 lol.png" alt="1v1.lol"></a>
-            <a href="games/Monkey-Mart/"><img src="images/monkey mart.png" alt="Monkey Mart"></a>
-            <a href="games/Bitlife/"><img src="images/Bitlife.png" alt="Bitlife"></a>
-            <a href="games/Angry-Sharks/"><img src="images/Angry Sharks.png" alt="Angry Sharks"></a>
-            <a href="games/Sm64/"><img src="images/sm64.jpg" alt="Super Mario 64"></a>
-            <a href="games/Jetpack-joyride/"><img src="images/Jetpack-joyride.png" alt="Jetpack Joyride"></a>
-            <a href="games/Just-fall/"><img src="images/just fall.png" alt="Just fall"></a>
-            <a href="games/Tunnel-rush/"><img src="images/tunnerl-rush.jpg" alt="Tunnel rush"></a>
-            <a href="games/Mario/"><img src="images/mario.png" alt="Mario"></a>
-            <a href="games/Temple-run/"><img src="images/temple-run.jpeg" alt="Temple run"></a>
-            <a href="games/osu/"><img src="images/osu.jpg" alt="osu!"></a>
-            <a href="games/geosash/"><img src="images/geo.png" alt="geometry dash"></a>
-            <a href="games/cookie-clicker/"><img src="images/cookie-clicker.jpg" alt="cookie clicker"></a>
-        </div>
-        
-        <footer>
-            <p>&copy; 2023 Fusion.LCC All Rights Reserved.</p>
-        </footer>
     </div>
-
+    <div class="main" id="main">
+        <h1>FUS<span>ION</span></h1>
+        <p><span id="subtitle">Loading...</span></p>
+        <button id="start-button">Get Started</button>
+    </div>
+    <div id="game-frame">
+        <div class="controls">
+            <i class="fa-solid fa-circle-xmark" onclick="play()"></i>
+        </div>
+        <iframe src="#" id="iframe"></iframe>
+    </div>
+    <div id="error">No Games Found.</div>
+    <div id="games"></div>
+    <footer id="footer">
+        <main>
+            <hr>
+            <h1>FUS<span>ION</span></h1>
+            <h2><a href=""><span class="one">MADE BY CHELINOMX</span></a></h2>
+            <p>© 2023 FUSION. All rights reserved.</p>
+            <p id="display"></p>
+        </main>
+    </footer>
     <script src="script.js"></script>
+    <script src="subtitle.js"></script>
 </body>
 </html>
