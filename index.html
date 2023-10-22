@@ -2,191 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schoology</title>
-    <!-- Specify the path to your favicon image -->
     <link rel="icon" href="images/schoology-logo.png" type="image/png">
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
-    <style>
-
-      footer {
-    text-align: center; /* Center the text horizontally */
-    padding: 20px; /* Add padding for spacing */
-    background-color: #333; /* Background color for the footer */
-    color: white; /* Text color for the footer */
-}
-
-/* If you want to center the footer vertically in the viewport, you can use flexbox */
-html, body {
-    height: 100%; /* Make sure the body and HTML have full height */
-    margin: 0; /* Remove default margin */
-    display: flex;
-    flex-direction: column;
-    font-size: 36px;
-}
-
-.content {
-    flex: 1; /* Allow the content to expand and fill the remaining space */
-    display: flex;
-    flex-direction: column;
-}
-
-footer {
-    align-self: center; /* Center the footer vertically within the content */
-}
-    /* You can add additional font formats here for browser compatibility */
-}
-        /* Set the background color of the entire page */
-        body {
-            background-color: #2e2e2e;
-            opacity: 0; /* Set initial opacity to 0 for the entire page */
-            animation: fadeIn 1s ease-in-out forwards; /* Apply fade-in animation to the entire page */
-            scroll-behavior: smooth; /* Enable smooth scrolling */
-        }
-
-        /* Set smooth scrolling for HTML element as well */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Move Fusion title back to the top-left corner */
-        nav {
-            display: flex;
-            align-items: center; /* Align items vertically */
-            padding: 20px;
-        }
-        h1 {
-            margin: 0;
-            font-size: 36px; /* Restore the original font size */
-        }
-
-        /* Center the "FUSION" text */
-        .fusion-text-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center horizontally */
-            margin-top: 120px; /* Add margin to separate it from the title */
-            opacity: 0; /* Set initial opacity to 0 for the Fusion text */
-            animation: fadeIn 1s ease-in-out forwards; /* Apply fade-in animation to the Fusion text */
-        }
-
-        /* Style for the "FUSION" text with gradient, font-family, and bold */
-        .fusion-text {
-            font-size: 190px;
-            background: linear-gradient(to right, #8b51fe 52.5%, #ffffff 50%); /* Gradient from purple to white */
-            -webkit-background-clip: text; /* Clip text to gradient */
-            color: transparent; /* Hide the text color */
-            font-weight: bold; /* Make the text bold */
-        }
-
-        /* Style for the randomized subtitles */
-        #randomSubtitle {
-            font-size: 50px; /* Set font size for subtitles */
-            text-align: center; /* Center align subtitles */
-            color: white;
-            opacity: 0; /* Set initial opacity to 0 for subtitles */
-            animation: fadeIn 1s ease-in-out forwards; /* Apply fade-in animation to subtitles */
-        }
-
-        /* Move search bar to top-right corner and place it above all elements */
-        .search {
-            text-align: right;
-            margin-top: 20px;
-            padding: 20px;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;  
-            opacity: 0; /* Set initial opacity to 0 for the search bar */
-            animation: fadeIn 1s ease-in-out forwards; /* Apply fade-in animation to the search bar */
-        }
-
-        /* Create a container for the "Game Title" text and search bar */
-        .title-and-search {
-            display: flex;
-            justify-content: space-between; /* Spread items evenly */
-            align-items: center; /* Center items vertically */
-        }
-
-        /* Style for the "Game Title" text with gradient */
-        .game-title {
-            margin: 0;
-            font-size: 76px; /* Increase the font size for the Game Title */
-            background: linear-gradient(to right, #8b51fe 52.5%, #ffffff 50%); /* Gradient from purple to white */
-            -webkit-background-clip: text; /* Clip text to gradient */
-            color: transparent; /* Hide the text color */
-        }
-
-        /* Style for the "Get Started" button */
-        .center-button {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        #getStartedButton {
-            font-size: 34px; /* Increase the font size for the button */
-            padding: 20px 40px; /* Increase padding for button size */
-            background-color: #8b51fe; /* Purple background color */
-            color: white; /* White text color */
-            border: none; /* Remove border */
-            border-radius: 15px; /* Make the button round */
-            cursor: pointer; /* Add pointer cursor on hover */
-            transition: background-color 0.3s ease, color 0.3s ease; 
-            font-family: Arial, sans-serif;
-            font-weight: bold
-        }
-
-        /* Invert colors on hover and add Santral font */
-        #getStartedButton:hover {
-            background-color: white; /* White background color */
-            color: #8b51fe; /* Purple text color */
-            font-family: Arial, sans-serif;
-            font-weight: bold
-        }
-
-        /* Keyframes for the fade-in animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
-    
-    <script>
-        // Array of possible subtitles
-        const subtitles = ["no"];
-
-        // Function to pick a random subtitle
-        function getRandomSubtitle() {
-            const randomIndex = Math.floor(Math.random() * subtitles.length);
-            return subtitles[randomIndex];
-        }
-
-        // Set the random subtitle
-        window.addEventListener('DOMContentLoaded', (event) => {
-            const randomSubtitleElement = document.getElementById("randomSubtitle");
-            randomSubtitleElement.textContent = getRandomSubtitle();
-        });
-
-        // Add scroll functionality to "Get Started" button
-        window.addEventListener('load', function() {
-            var getStartedButton = document.getElementById("getStartedButton");
-            getStartedButton.addEventListener("click", function() {
-                window.scrollBy(0, 470);
-        });
-            
-            // Function to show the notification when the page loads
-        window.addEventListener('load', function() {
-            // Customize the message and styling as needed
-            alert('Welcome to our website!'); // Basic alert
-           });
-        });
-    </script>
 </head>
 <body>
     <nav>
@@ -201,55 +21,23 @@ footer {
 
     <div class="content">
         <hr>
-
-        <!-- Center the "FUSION" text with two different colors -->
         <div class="fusion-text-container">
             <div class="fusion-text">FUSION</div>
         </div>
-
-        <!-- Move the randomized subtitles below the "Fusion is awesome!" text -->
         <h2 id="randomSubtitle"></h2>
-
-        <!-- Center and style the "Get Started" button -->
         <div class="center-button">
             <button id="getStartedButton">PLAY!</button>
         </div>
 
         <div id="games">
-            <a href="games/sneakpeek/"><img src="images/Sneak-Peek.jpg" alt="sneekpeek"></a>
-            <a href="games/bob-the-robber-2/"><img src="images/bob-the-robber-2.png" alt="bob the robber 2"></a>
-            <a href="games/vex3/"><img src="images/vex3.jpg" alt="vex 3"></a>
-            <a href="games/vex4/"><img src="images/vex4.jpg" alt="vex 4"></a>
-            <a href="games/vex5/"><img src="images/vex5.jpg" alt="vex 5"></a>
-            <a href="games/vex6/"><img src="images/vex6.jpeg" alt="vex 6"></a>
-            <a href="games/vex7/"><img src="images/vex7.jpeg" alt="vex 7"></a>
-             <a href="games/Minecraft/"><img src="images/mc.png" alt="Minecraft"></a>
-            <a href="games/moto-x3m/"><img src="images/moto-x3m.jpg" alt="moto x3m"></a>
-            <a href="games/retro-bowl/"><img src="images/retro-bowl.jpg" alt="retrobowl"></a>
-            <a href="games/drive-mad/"><img src="images/drive-mad.jpg" alt="drive mad"></a>
-            <a href="games/slope/"><img src="images/slope.jpg" alt="slope"></a>
-            <a href="games/motox3m2/"><img src="images/motox3m2.jpg" alt="moto x3m2"></a>
-            <a href="games/Basketball-Stars/"><img src="images/basketball-stars.png" alt="basketball stars"></a>
-            <a href="games/2048/"><img src="images/2048.png" alt="2048"></a>
-            <a href="games/1v1lol/"><img src="images/1v1 lol.png" alt="1v1.lol"></a>
-            <a href="games/Monkey-Mart/"><img src="images/monkey mart.png" alt="Monkey Mart"></a>
-            <a href="games/Bitlife/"><img src="images/Bitlife.png" alt="Bitlife"></a>
-            <a href="games/Angry-Sharks/"><img src="images/Angry Sharks.png" alt="Angry Sharks"></a>
-            <a href="games/Sm64/"><img src="images/sm64.jpg" alt="Super Mario 64"></a>
-            <a href="games/Jetpack-joyride/"><img src="images/Jetpack-joyride.png" alt="Jetpack Joyride"></a>
-            <a href="games/Just-fall/"><img src="images/just fall.png" alt="Just fall"></a>
-            <a href="games/Tunnel-rush/"><img src="images/tunnerl-rush.jpg" alt="Tunnel rush"></a>
-            <a href="games/Mario/"><img src="images/mario.png" alt="Mario"></a>
-            <a href="games/Temple-run/"><img src="images/temple-run.jpeg" alt="Temple run"></a>
-            <a href="games/osu/"><img src="images/osu.jpg" alt="osu!"></a>
-            <a href="games/geosash/"><img src="images/geo.png" alt="geometry dash"></a>
-            <a href="games/cookie-clicker/"><img src="images/cookie-clicker.jpg" alt="cookie clicker"></a>
+            <!-- Add your game links and images here -->
         </div>
-                
+        
         <footer>
-        <p>&copy; 2023 Fusion.LCC All Rights Reserved.</p>
+            <p>&copy; 2023 Fusion.LCC All Rights Reserved.</p>
         </footer>
     </div>
 
     <script src="script.js"></script>
 </body>
+</html>
