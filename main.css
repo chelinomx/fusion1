@@ -113,7 +113,7 @@ nav h1 {
     transform: scale(1.01);
 }
 
-.featured {
+#games {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -123,7 +123,7 @@ nav h1 {
     margin-top: 6vw;
 }
 
-.featured h1 {
+#games h1 {
     font-size: 3.5vw;
     font-weight: 700;
     margin: 1vw 1vw .4vw 1vw;
@@ -132,12 +132,12 @@ nav h1 {
     color: #fff;
 }
 
-.featured .column {
+#games .column {
     display: flex;
     flex-direction: column;
 }
 
-.featured img {
+#games img {
     height: 12.5vw;
     width: 12.5vw;
     border-radius: 1vw;
@@ -147,25 +147,25 @@ nav h1 {
     transition: all .2s;
 }
 
-.featured img:hover {
+#games img:hover {
     transform: scale(1.02);
     filter: brightness(50%);
 }
 
 
-.featured .row img {
+#games .row img {
     height: 26vw;
     width: 26vw;
 }
 
-.featured a {
+#games a {
     display: inline-block;
     position: relative;
     color: #2c7ffc;
     text-decoration: none;
 }
     
-    .featured .play-button {
+    #games .play-button {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -174,12 +174,12 @@ nav h1 {
     transition: opacity 0.2s;
     }
     
-    .featured a:hover .play-button {
+    #games a:hover .play-button {
     opacity: 1;
     pointer-events: none;
     }
     
-    .featured .play-button i {
+    #games .play-button i {
     font-size: 5vw;
     text-shadow: 0 0 100px #2c7ffc;
     }
