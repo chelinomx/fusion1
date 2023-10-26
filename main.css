@@ -183,3 +183,50 @@ nav h1 {
     font-size: 5vw;
     text-shadow: 0 0 100px #2c7ffc;
     }
+
+ footer {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    z-index: 5;
+    margin:auto;
+}
+ footer.mobile {
+    display: none;
+}
+ footer main {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    height: 30%;
+    width:60%;
+}
+ footer main h1 {
+    font-size: 5vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+ footer main h1 span {
+    color:#8B51FE;
+}
+ footer main h2 {
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+ footer main h2 span.one {
+    color:gold;
+    font-weight: 800;
+    font-size: 1.8vw;
+}
+ footer main h2 span.two {
+    color:rgb(255, 55, 55);
+    font-weight: 700;
+}
+ footer main p {
+    text-align: center;
+    margin-top: 2.5vw;
+    font-size: 1vw;
+    font-weight: 600;
+}
