@@ -153,11 +153,6 @@ nav h1 {
 }
 
 
-#games .row img {
-    height: 26vw;
-    width: 26vw;
-}
-
 #games a {
     display: inline-block;
     position: relative;
