@@ -179,24 +179,5 @@ nav h1 {
     text-shadow: 0 0 100px #2c7ffc;
     }
 
-#games {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    margin-bottom: 1vw;
-    margin-top: -3.5vw;
-    width: min-content;
-    display: block;
-}
 
-#games.mobile {
-    display: grid;
-    margin-top: 23vw;
-    margin-left: .6vw;
-    grid-template-columns: 1fr;
-    gap:0vmin;
-    margin-bottom: 1.5vw;
-    animation: fadeIn .5s ease-in-out;
-    overflow-x: hidden;
-}
 
